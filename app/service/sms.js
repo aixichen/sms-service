@@ -44,6 +44,14 @@ class SmsService extends Service {
     });
     return [];
   }
+  async smsCallbackMsg(data) {
+    const temp_data = {};
+    temp_data.id = UuidV1();
+    temp_data.log_id = '';
+    temp_data.sms_result = JSON.stringify(data);
+    this.ctx.model.smsCallbackMsg.create(temp_data);
+    return [];
+  }
 }
 
 module.exports = SmsService;

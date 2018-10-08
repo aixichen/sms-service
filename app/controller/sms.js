@@ -45,6 +45,18 @@ class SmsController extends Controller {
       this.ctx.helper.error(this.ctx, 404, error.message);
     }
   }
+  async smsCallbackMsg() {
+    try {
+      const input = this.ctx.request.body;
+      await this.ctx.service.sms.smsCallbackMsg(input);
+      this.ctx.body = {
+        result: 0,
+        errmsg: 'OK',
+      };
+    } catch (error) {
+      this.ctx.helper.error(this.ctx, 404, error.message);
+    }
+  }
 }
 
 module.exports = SmsController;
