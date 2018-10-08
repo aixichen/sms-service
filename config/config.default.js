@@ -19,10 +19,10 @@ module.exports = appInfo => {
   config.sequelize = {
     dialect: 'mysql',
     database: 'sms',
-    host: 'mysqldb',
-    port: 3306,
-    username: 'root',
-    password: '123456',
+    host: '118.24.45.246',
+    port: 3307,
+    username: 'sms',
+    password: 'sms123456',
     timezone: '+08:00',
   };
   return config;
